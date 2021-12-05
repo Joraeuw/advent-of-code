@@ -1,6 +1,6 @@
 let input = require("./input").module.inputText;
 
-const gotoNumbers = input[0].split(",").map((x) => parseInt(x));
+const gotoNumbers = input[0].split(/,/).map((x) => parseInt(x));
 let boards = [];
 let board = [];
 //Init and store data
@@ -11,7 +11,7 @@ for (const line of input.slice(2)) {
     continue;
   }
   var row = line
-    .split(" ")
+    .split(/ /)
     .filter((x) => x)
     .map((x) => parseInt(x));
 
