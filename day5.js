@@ -34,7 +34,7 @@ for (const line of lines) {
   } else if ((x1 > x2 && y1 > y2) || (x1 < x2 && y1 < y2)) {
     //if x1 > x2 && y1 > y2 we
     //incrase y and x at the same time to get diagonal
-    //Also tanA > 0
+    //Also tanA < 0
     //     \
     //      \
     //       \
@@ -46,7 +46,7 @@ for (const line of lines) {
     )
       grid[y][x]++;
   } else {
-    //tanA < 0
+    //tanA > 0
     //        /
     //      /
     //    /
