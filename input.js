@@ -1,14 +1,21 @@
-const input = `
-6617113584
-6544218638
-5457331488
-1135675587
-1221353216
-1811124378
-1387864368
-4427637262
-6778645486
-3682146745`
+const input = `fs-end
+he-DX
+fs-he
+start-DX
+pj-DX
+end-zg
+zg-sl
+zg-pj
+pj-he
+RW-he
+fs-DX
+pj-RW
+zg-RW
+start-pj
+he-WI
+zg-he
+pj-fs
+start-RW`;
 exports.module = {
   pure: input,
   inputNums: input.split(/\n/).map((num) => parseInt(num)),
