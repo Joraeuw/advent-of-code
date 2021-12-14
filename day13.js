@@ -31,8 +31,8 @@ for (let foldNumber = 0; foldNumber < folds.length; foldNumber++) {
     const foldY = folds[foldNumber][1];
     for (let row = 0; row < paper.length; row++) {
       for (let col = 0; col < paper[row].length; col++) {
-        if (col > foldY) {
-          if (paper[row][col] === "#") paper[row][2 * foldY - col] = "#";
+        if (col > foldY && paper[row][col] === "#") {
+          paper[row][2 * foldY - col] = "#";
           paper[row][col] = ".";
         }
       }
@@ -42,8 +42,8 @@ for (let foldNumber = 0; foldNumber < folds.length; foldNumber++) {
     const foldX = folds[foldNumber][0];
     for (let row = 0; row < paper.length; row++) {
       for (let col = 0; col < paper[row].length; col++) {
-        if (row > foldX) {
-          if (paper[row][col] === "#") paper[2 * foldX - row][col] = "#";
+        if (row > foldX && paper[row][col] === "#") {
+          paper[2 * foldX - row][col] = "#";
           paper[row][col] = ".";
         }
       }
@@ -60,10 +60,12 @@ for (const row of paper) {
 
 let text = "";
 for (const row of paper) {
-  text += row.toString() + "\n";
+  text += row.join(" ") + "\n";
 }
 
-fs.writeFile("./resultDay13.txt", text, (err) => {
+console.log(counter);
+
+fs.writeFile("./resultDay13b.txt", text, (err) => {
   if (err) {
     console.error(err);
     return;

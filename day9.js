@@ -22,7 +22,10 @@ for (let row = 0; row < matrix.length; row++) {
       col + 1 <= matrix[row].length - 1 ? matrix[row][col + 1] : Infinity;
     const minAdj = Math.min(up, down, left, right);
 
-    if (num < minAdj) lows.push([row, col]);
+    if (num < minAdj) {
+      lows.push([row, col]);
+      sum += num + 1;
+    }
   }
 }
 
@@ -44,5 +47,7 @@ const getBasinSize = ([y, x]) => {
 const basinSize = lows.map(getBasinSize);
 basinSize.sort((a, b) => a - b);
 console.log(basinSize.slice(-3).reduce((a, b) => a * b, 1));
+console.log(sum);
+console.log(basinSize.slice(-3));
 
 //console.log(sum);
