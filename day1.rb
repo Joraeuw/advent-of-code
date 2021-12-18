@@ -5,7 +5,6 @@ for num in 2..input.length() - 2 do
   if input[num + 1] > input[num - 2]
     result += 1
   end
-  puts input[num + 1] > input[num - 2]
 end
 
 puts result
